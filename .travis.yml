@@ -1,0 +1,8 @@
+language: generic
+sudo: required
+services:
+  - docker
+before-install:
+  - docker build -t snehaprem/master_sne -f dockerfile.dev
+scripts:
+  - docker run -e CI=true sehaprem/master_sne npm run test
