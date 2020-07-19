@@ -10,7 +10,7 @@ deploy:
     provider: elasticbeanstalk
     region: us-east-1
     app: "Snakey_docker"
-    env: "SnakeyDocker-env"
+    env: "SnakeyDocker-env-1"
     bucket-name: "elasticbeanstalk-us-east-1-775322342958"
     bucket-path: "Snakey_docker"
     on:
