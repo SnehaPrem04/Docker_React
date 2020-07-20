@@ -3,10 +3,17 @@ sudo: required
 services:
   - docker
 before-install:
-<<<<<<< HEAD
-  - docker build -t snehaprem/master_sne -f DockerFile.dev .
-=======
-  - docker build -t snehaprem/master_sne -f dockerfile.dev .
->>>>>>> c9039eeab1b2b78e1872e2eba06b9d2f367a179d
+  - docker build -t snehaprem04/Docker-React -f DockerFile.dev .
 scripts:
-  - docker run -e CI=true sehaprem/master_sne npm run test
+  - docker run -e CI=true snehaprem04/Docker-React npm run test
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-1"
+  app: "Snakey_docker"
+  env: "SnakeyDocker-env-1"
+  bucket-name: "elasticbeanstalk-us-east-1-775322342958"
+  bucket-path: "Snakey_docker"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
