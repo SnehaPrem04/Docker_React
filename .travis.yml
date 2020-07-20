@@ -3,9 +3,9 @@ sudo: required
 services:
   - docker
 before-install:
-  - docker build -t snehaprem04/Docker-React -f DockerFile.dev .
+  - docker build -t snehaprem04/docker_react -f DockerFile.dev .
 scripts:
-  - docker run -e CI=true snehaprem04/Docker-React npm run test
+  - docker run -e CI=true snehaprem04/docker_react npm run test
 deploy:
   provider: elasticbeanstalk
   region: "us-east-1"
