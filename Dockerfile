@@ -6,6 +6,7 @@ copy package.json .
 run npm install
 copy . .
 
+Expose 80/tcp
 run npm run build
 
 From nginx
